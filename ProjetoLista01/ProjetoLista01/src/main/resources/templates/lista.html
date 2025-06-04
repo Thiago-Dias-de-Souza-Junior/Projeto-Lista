@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Minhas Anotações</title>
+</head>
+<body>
+<h1>Minhas Anotações</h1>
+
+<form th:action="@{/lista}" method="post">
+    <textarea name="texto" rows="4" cols="50" placeholder="Digite sua anotação aqui"></textarea><br/>
+    <button type="submit">Adicionar</button>
+</form>
+
+<ul>
+    <li th:each="anotacao : ${anotacoes}" th:text="${anotacao.texto}"></li>
+</ul>
+
+<form th:action="@{/logout}" method="post">
+    <button type="submit">Sair</button>
+</form>
+</body>
+</html>

@@ -1,0 +1,20 @@
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Nova Tarefa</title>
+</head>
+<body>
+<h1>Nova Tarefa</h1>
+<form th:action="@{/tarefas/salvar}" method="post" th:object="${tarefa}">
+    <input type="hidden" th:field="*{id}" />
+
+    <label for="descricao">Descrição:</label>
+    <input type="text" id="descricao" th:field="*{descricao}" required />
+
+    <br/><br/>
+    <button type="submit">Salvar</button>
+</form>
+</body>
+</html>
